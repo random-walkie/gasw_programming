@@ -9,8 +9,7 @@
     "ghcr.io/devcontainers-contrib/features/bash-command:1": {}
   },
 
-  "postCreateCommand": "pip3 install --user -r requirements.txt --no-cache-dir",
-
+  "postCreateCommand": "pip3 install --user -r /workspaces/gasw_programming/.devcontainer/requirements.txt --no-cache-dir",
   "customizations": {
     "vscode": {
       "settings": {
