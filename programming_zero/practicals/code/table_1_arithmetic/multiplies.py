@@ -10,15 +10,14 @@ def multiplies(list1, list2):
     Returns:
     int or float: The sum, of the multiplication of each element of list1 and list2.
     """
-    
     result1 = 1
     result2 = 1
     
     for i in list1:
-        result1 = result1 * i
+        result1 *= i
         
     for j in list2:
-        result2 = result2 * j
+        result2 *= j
         
     return result1 + result2
     
