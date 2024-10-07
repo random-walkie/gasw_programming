@@ -8,7 +8,7 @@ def multiplies(list1, list2):
     list2 (list): The second list of float or int to multiply.
     
     Returns:
-    int or float: The dot product of list1 and list2.
+    int or float: The sum, of the multiplication of each element of list1 and list2.
     """
     
     result1 = 1
