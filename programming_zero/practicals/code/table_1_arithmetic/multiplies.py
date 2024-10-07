@@ -27,4 +27,4 @@ if __name__ == "__main__":
   list1 = [1, 2, 3]
   list2 = [3, 2, 1]
   result = multiplies(list1, list2)
-  print(f"The dot product of list1 and list2 is: {result}")
+  print(f"The sum of the products of list1 and list2 is: {result}")
