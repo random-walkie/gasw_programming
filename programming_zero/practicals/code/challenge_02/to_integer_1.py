@@ -8,9 +8,7 @@ def to_integer_1(binary_string):
     
     Return:
     int: The integer value corresponding to the input binary string.
-    """
-    print(f"The input string: {binary_string}")
-    
+    """    
     # The script should handle binary strings with 
     # a maximum length of 8 bits (or less).
     string_length = len(binary_string)
@@ -53,7 +51,8 @@ def to_integer_1(binary_string):
 
 # Main block to test the function
 if __name__ == "__main__":
-    binary_string = "011"
+    binary_string = "1010101"
     result = to_integer_1(binary_string)
+    print(f"The input string: {binary_string}")
     print(f"The corresponding integer is: {result}")
     
