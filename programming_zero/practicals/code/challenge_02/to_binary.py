@@ -8,9 +8,7 @@ def to_binary(integer):
     
     Return:
     string: The binary value corresponding to the input integer.
-    """
-    print(f"The input integer: {integer}")
-    
+    """    
     integer = int(integer) #  casting to integer, if input is string
     # if integer is negative, return error
     if integer < 0:
@@ -25,11 +23,11 @@ def to_binary(integer):
            integer = int(integer / 2) # divide integer by 2
 
     return binary_string
-        
 
 # Main block to test the function
 if __name__ == "__main__":
-    integer = "0"
+    integer = "1492"
     result = to_binary(integer)
+    print(f"The input integer: {integer}")
     print(f"The binary conversion is: {result}")
     
