@@ -1,6 +1,7 @@
+# TODO: RE-WRITE CODE; THIS FUNCTION DOES NOT FOLLOW PEP8 PRINCIPLES
 def hole(r, metric = 'manhattan'):
     """
-    generates and outputs a square (with side length equal to
+    Generates and outputs a square (with side length equal to
     51) pattern of uniform characters (using #) to the console. In the centre of the square, there should
     be a circular "hole" with integer radius r.
     
@@ -22,13 +23,21 @@ def hole(r, metric = 'manhattan'):
             for j in range(root):
                 square[i].append('#')
                 
-        # BE VERY CAREFUL WHEN CREATING NESTED LISTS
-        # INDEXING CAN GO VERY WRONG, E.G. THIS DOES NOT WORK:
-        # x_axis = []
-        # for i in range(root):
-        #   x_axis.append('#')
-        #   square.append(x_axis)
-        # IT TOOK ME HOURS TO FIGURE THIS OUT D:
+        """ 
+        BE VERY CAREFUL WHEN CREATING NESTED LISTS.
+        INDEXING CAN GO VERY WRONG, E.G. THIS DOES NOT WORK:
+        x_axis = []
+        square = []
+        for i in range(root):
+          x_axis.append('#')
+          square.append(x_axis)
+         
+        The list x_axis is defined outside the loop and is not re-initialized for each row.
+        When x_axis.append('#') is called in the loop, it adds '#' to the same list each time.
+        Consequently, when square.append(x_axis) is executed, it appends the same reference to x_axis for every row.
+        As a result, all entries in square point to the same list x_axis. 
+        Thus, after the loop, all rows in square will be identical and will contain root number of '#' characters.
+        """
         
         replace_xy = [] # list to get coordinates to replace
         middle_x = root//2 # finding middle x
@@ -49,5 +58,5 @@ def hole(r, metric = 'manhattan'):
             print(''.join(line)) # printing each line
     
 if __name__ == "__main__":
-    hole(23, 'euclidean')
+    hole(10, 'euclidean')
     
