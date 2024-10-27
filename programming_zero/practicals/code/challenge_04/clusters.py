@@ -10,13 +10,13 @@ def generate_bit_string(N):
     - N (int): integer representing the string length.
 
     Returns:
-    - binary_string (str): a binary string with user-specified length.
+    - bit_string (str): a binary string with user-specified length.
     """
     # Initiate empty string
-    binary_string = ''
+    bit_string  = ''
     for n in range(N):
-        binary_string += str(random.randint(0, 1))
-    return binary_string
+        bit_string += str(random.randint(0, 1))
+    return bit_string
     
 def find_clusters(bit_string):
     """
@@ -49,6 +49,28 @@ def find_clusters(bit_string):
         
     return clusters
     
+
+def average_cluster_size(clusters):
+    """
+    This function calculates the average lenght per cluster.
+    
+    Parameters:
+    - clusters (list of tuples): a list of tuples containing the (size, indices) of the 1s clusters.
+
+    Returns:
+    - avg_clstr (float): a float representing the average size (number of 1s) per cluster.
+    """
+    numerator = 0
+    denominator = 0
+    for cluster in clusters:
+        numerator += cluster[0]
+        denominator += 1
+        
+    avg_clstr = numerator / denominator
+    
+    return avg_clstr
+        
+    
 def main():
     """
     Executes the program.
@@ -69,6 +91,8 @@ def main():
         print(f'The clusters are:')
         for cluster in clusters:
             print(cluster[1])
+        average_cluster = average_cluster_size(clusters)
+        print(f'The average size per cluster is {average_cluster}.')
     else:
         # Provide usage information if the input argument list has the wrong length
         print("\nUSAGE: Please input the string length you require")
