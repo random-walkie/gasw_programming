@@ -29,7 +29,7 @@ if __name__ == "__main__":
     test = [[5, 7, 3], [2, -1, 4], [3, 4, 5, 6], [1, 2, 'c'], [1, 2, 3, 'c']]
     # This list keeps the expected test results.
     expected_result = [[10, 14, 6], [7, 6, 7], None, [6, 9], None]
-    # Will initiate an empty list so I can keep my test results.
+    # Will initiate an empty list, so I can keep my test results.
     result = []
     for i in range(len(test)):
         result.append(adds(test[0], test[i]))
