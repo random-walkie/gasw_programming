@@ -1,20 +1,16 @@
-def adds(p1, p2):
+def adds(p1: list, p2: list) -> list | None:
     """
     Adds and returns generic list vectors p1 and p2.
 
-    Parameters:
-    p1 (list): The first list of numbers (represents a vector).
-    p2 (list): The second list of numbers (represents a vector).
-
-    Returns:
-    list: A list with the added vectors (p1 + p2), if p1 and p2 have same length.
-    None: If p1 and p2 have different sizes.
+    :param p1: The first vector.
+    :param p2: The second vector.
+    :return: A list of all possible element-wise sums for p1 and p2 (if same size), or None (otherwise).
     """
     # First, create the output empty list
     list_of_sums = []
     if len(p1) == len(p2): # If lists have the same length
         for idx, value in enumerate(p1): # iterate over the indices, and the values of first list
-            try: # implementing this within for loop, because we may be interested in getting partial lists
+            try: # implementing this within for loop, because we may be interested in fetching partial sum lists
                 list_of_sums.append(value + p2[idx]) # append the value of p1 after adding to the value of p2, at the same index
             except TypeError: # if we get a TypeError, e.g., when we try to add an integer to a string type
                 continue # we skip iteration
