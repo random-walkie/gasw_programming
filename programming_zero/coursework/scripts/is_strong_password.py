@@ -1,11 +1,11 @@
 def is_strong_password(password: str) -> bool:
     """
     Evaluates the strength of a password, i.e., that it contains:
-    a) at least 8 characters
-    b) at least one uppercase letter
-    c) at least one lowercase letter
-    d) at least one integer digit
-    e) at least one special character: ! @ # $ % ^ & * ( )
+    a) At least 8 characters
+    b) At least one uppercase letter
+    c) At least one lowercase letter
+    d) At least one integer digit
+    e) At least one special character: ! @ # $ % ^ & * ( )
     :param password: alphanumeric string.
     :return: True, if password is strong, otherwise False.
     """
