@@ -9,17 +9,18 @@ def is_divisible_by(number: int | float, denominators: list) -> bool:
     if type(number) is str and type(denominators[0]) is str and type(denominators[1]) is str:
         print('"number" and elements of "denominators" are of str type. Please, update your input.')
     try:
-        remainder = 0
-        # Check if number is inclusively within range
-        for i in range(len(denominators)):
-            # If yes, change value of return variable to True
+        remainder = 0 # initialise remainder variable
+        # Iterate over elements of denominators list
+        for j in range(len(denominators)):
+            # For each j, calculate the remainder of the division, using the module (%) operator
+            # If numbers are fully divisible, remainder will be 0
             remainder += number % denominators[i]
-        if remainder == 0:
-            is_divisible = True
+        if remainder == 0: # if sum of remainder equal zero
+            is_divisible = True # then the number is divisible by each element in the list of denominators, so set to True.
     except TypeError: # if we get a TypeError, e.g., when trying to compare str and int | float types
         print(f'At least one of "number": {number}, or "denominators": {denominators} is not a number.')
 
-    return is_divisible
+    return is_divisible # return if number is divisible
 
 if __name__ == "__main__":
     # Unit Tests
