@@ -19,9 +19,6 @@ def is_monotonic(string_of_digits: str) -> bool:
                     counter += 1
                 else:
                     break
-            # If my counter has same length as string_of_digits - 1, this means my function is monotonic
-            if counter == len(string_of_digits) - 1:
-                monotonic =  True
             # If string_of_digits is of type string, but not a string of digits, e.g., 'abcs',
             # the code above will still run smoothly, even though it doesn't really make sense.
             # Therefore, I will try to typecast the variable to int. This will cause an error,
@@ -29,6 +26,12 @@ def is_monotonic(string_of_digits: str) -> bool:
             int(string_of_digits)
         except ValueError:
             print(warning_message)
+        # I have to add this else here, because I am not raising the error above, because I don't want to code
+        # to stop. If I don't add this else, the program will still return True for inputs such as 'abcs'
+        else:
+            # If my counter has same length as string_of_digits - 1, this means my function is monotonic
+            if counter == len(string_of_digits) - 1:
+                monotonic =  True
     else:
         # In this block, I am catching the cases where string_of_digits is not of type str,
         # And alert the user if that is the case
