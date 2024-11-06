@@ -6,7 +6,7 @@ def is_even(number: int) -> bool:
     """
     even = False
     try:
-        if number % 2 == 0:
+        if number % 2 == 0: # if number is even, the remainder of division by 2 should be 0
             even = True
     except TypeError: # if we get a TypeError, e.g., when trying to compare str and int | float types
         print(f'"number": {number} is not a number.')
