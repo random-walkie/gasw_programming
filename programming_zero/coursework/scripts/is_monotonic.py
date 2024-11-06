@@ -4,16 +4,15 @@ def is_monotonic(string_of_digits: str) -> bool:
     :param string_of_digits:
     :return: Returns True if so, otherwise False.
     """
-    counter = 1 # initialising a counter
     monotonic = False
     warning_message = f'"string_of_digits": {string_of_digits} is not a string of digits (e.g., "12345").'
     if type(string_of_digits) is str: # Here I am checking if string_of_digits is indeed of type str
         try:
-
             # Using a while loop, to iterate over string of digits.
             # I have to have two stop points for this loop:
             # 1) Iterate over all digits (excluding first and last), and if it is monotonic, record it in a counter.
             # 2) If it isn't monotonic, I have to use a 'break' to leave the while cycle.
+            counter = 1 # initialising a counter
             while counter < len(string_of_digits) - 1:
                 if string_of_digits[counter - 1] <= string_of_digits[counter] <= string_of_digits[counter + 1] or \
                         string_of_digits[counter + 1] <= string_of_digits[counter] <= string_of_digits[counter - 1]:
