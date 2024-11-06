@@ -6,21 +6,25 @@ def is_between_range(number: int | float, range: list) -> bool:
     :return: True, if the number is inclusively within a range. False, otherwise.
     """
     between_range = False # initialising return variable to False
-    try:
-        # Check if number is inclusively within range
-        if range[0] <= number <= range[1]:
-            # If yes, change value of return variable to True
-            between_range = True
-    except TypeError: # if we get a TypeError, e.g., when trying to compare str and int | float types
-        print(f'At least one of number: {number}, or range: {range} is not a number.')
+    # Here we catch the case where all parameters are of str type.
+    if type(number) is str and type(range[0]) is str and type(range[1]) is str:
+        print('number and elements of range are of str type. Please, update your input.')
+    else:
+        try:
+            # Check if number is inclusively within range
+            if range[0] <= number <= range[1]:
+                # If yes, change value of return variable to True
+                between_range = True
+        except TypeError: # if we get a TypeError, e.g., when trying to compare str and int | float types
+            print(f'At least one of number: {number}, or range: {range} is not a number.')
 
     return between_range
 
 if __name__ == "__main__":
     # Unit Tests
-    test = [[5, [1, 10]], [50, [1, 50]], [5, [10, 1]], ['a', [1, 10]]]
+    test = [[5, [1, 10]], [50, [1, 50]], [5, [10, 1]], ['a', [1, 10]], ['a', ['a', 'b']]]
     # This list keeps the expected test results.
-    expected_result = [True, True, False, False]
+    expected_result = [True, True, False, False, False]
     # Will initiate an empty list, so I can keep my test results.
     result = []
     for i in range(len(test)):
