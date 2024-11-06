@@ -27,9 +27,9 @@ def greatest(a: int | float, b: int | float, c: int | float) -> int | float | No
 
 if __name__ == "__main__":
     # Unit Tests
-    test = [[5, 12, 8], [45, 1, 9], [3, 'a', 6], ['a', 'b', 'c']]
+    test = [[5, 12, 8], [45, 1, 9], [3, 'a', 6], ['a', 'b', 'c'], [0.3, 0.9, 0.45]]
     # This list keeps the expected test results.
-    expected_result = [12, 45, None, None]
+    expected_result = [12, 45, None, None, 0.9]
     # Will initiate an empty list, so I can keep my test results.
     result = []
     for i in range(len(test)):
