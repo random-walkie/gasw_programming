@@ -1,15 +1,12 @@
-def area_of_circle(radius):
+def area_of_circle(radius: int | float) -> float | None:
     """
     This function assumes an approximate value PI = 3.142 (that is hard-coded inside the
     function), and calculates the area of a circle given the radius.
 
-    Parameters:
-    radius (int or float): The radius of the circle.
-
-    Returns:
-    float: The approximate area of the circle.
-    None: If the radius is of the wrong type (i.e., not an integer or float).
+    :param radius: The radius of the circle.
+    :return: The approximate area of the circle, or None (if radius is of wrong type).
     """
+
     pi = 3.142
     try: # try the following line of code
         area = pi * radius**2
