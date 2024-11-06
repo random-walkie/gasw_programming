@@ -8,7 +8,7 @@ def greatest(a: int | float, b: int | float, c: int | float) -> int | float | No
     :return: The greatest of three numbers.
     """
     greatest_num = None
-    # Here we catch the case where all elements are of str type.
+    # Here we catch the case where all parameters are of str type.
     if type(a) is str and type(b) is str and type(c) is str:
         print('a, b, and c are all of str type. Please, update your input')
     else:
