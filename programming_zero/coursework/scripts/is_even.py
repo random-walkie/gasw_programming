@@ -15,7 +15,7 @@ def is_even(number: int) -> bool:
 
 if __name__ == "__main__":
     # Unit Tests
-    test = [10, 1, 2, 3, 4, 3041394103, 239392, 0.45, 'abc', 'a', [1, 2, 3]]
+    test = [10, 1, 2, 3, 4, 3041394103, 239392, -2, 0.45, 'abc', 'a', [1, 2, 3]]
     # This list keeps the expected test results.
     expected_result = [True, False, True, False, True, False, True, False, False, False, False]
     # Will initiate an empty list, so I can keep my test results.
