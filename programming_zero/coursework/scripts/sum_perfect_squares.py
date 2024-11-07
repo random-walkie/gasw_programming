@@ -2,7 +2,7 @@ def sum_perfect_squares(number: int) -> int | None:
     """
     This function sums the perfect squares in the multiplication table up to n x n.
     :param number: An integer.
-    :return: The perfect squares in the multiplication table up to n x n.
+    :return: The perfect squares in the multiplication table up to n x n, or None.
     """
     if isinstance(number, int):
         products = []
