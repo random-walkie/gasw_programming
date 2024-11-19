@@ -13,8 +13,8 @@ def is_divisible_by(number: int | float, denominators: list) -> bool:
         # Iterate over elements of denominators list
         for j in range(len(denominators)):
             # For each j, calculate the remainder of the division, using the module (%) operator
-            # If numbers are fully divisible, remainder will be 0
-            remainder += number % denominators[i]
+            # If numbers are fully divisible, the remainder will be 0
+            remainder += number % denominators[j]
         if remainder == 0: # if sum of remainder equal zero
             is_divisible = True # then the number is divisible by each element in the list of denominators, so set to True.
     except TypeError: # if we get a TypeError, e.g., when trying to compare str and int | float types
