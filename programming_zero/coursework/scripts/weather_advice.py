@@ -19,8 +19,11 @@ def weather_advice(sunny: bool, rainy: bool, windy: bool, temperature: float) ->
             windy (regardless of rain or sun), the
             function adds "Hold on to your hat."
     """
+    # Check if variables are of the correct type
     if isinstance(sunny, bool) and isinstance(rainy, bool) and isinstance(windy, bool) and isinstance(temperature, float):
+        # initialise an empty list of messages
         messages = []
+        # if sunny is true
         if sunny:
             messages.append("Wear sun cream.")
         if sunny and temperature > 25.0:
@@ -32,6 +35,7 @@ def weather_advice(sunny: bool, rainy: bool, windy: bool, temperature: float) ->
         if windy:
             messages.append("Hold on to your hat.")
         return messages
+    # if variables are not of correct type, inform the user
     else:
         print(f'Input should be boolean values, True or False, or a float, for the temperature, e.g. 26.0',
               f'sunny is: {sunny}',
@@ -46,7 +50,8 @@ if __name__ == "__main__":
             [False, True, False, 28.0],
             [False, True, True, 20.0],
             [False, False, True, 10.0],
-            [False, False, False, 5.0]
+            [True, True, True, 5.0],
+            [True, True, True, 26.0]
             ]
     # This list keeps the expected test results.
     expected_result = [['Wear sun cream.'],
@@ -54,7 +59,15 @@ if __name__ == "__main__":
                        ['Carry an umbrella.'],
                        ['Carry an umbrella.', "It's windy! Hold onto your umbrella tightly.",
                         'Hold on to your hat.'],
-                       ['Hold on to your hat.']
+                       ['Hold on to your hat.'],
+                       ['Wear sun cream.',
+                        'Carry an umbrella.',
+                        "It's windy! Hold onto your umbrella tightly.",
+                        'Hold on to your hat.'],
+                       ['Wear sun cream.', "It's hot and sunny! Eat some ice cream.",
+                        'Carry an umbrella.',
+                        "It's windy! Hold onto your umbrella tightly.",
+                        'Hold on to your hat.']
                        ]
     # Will initiate an empty list, so can keep test results.
     result = []
